@@ -1,0 +1,52 @@
+<!DOCTYPE html>  
+<html lang="id">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>LKPD4</title>  
+    <style>  
+        #imageDisplay {  
+            margin-top: 20px;  
+        }  
+        img {  
+            max-width: 100%;  
+            height: auto;  
+        }  
+    </style>  
+</head>  
+<body>  
+    <h1>Gambar dengan Opacity</h1>  
+
+    <label for="imageSelect">Pilih Gambar:</label>  
+    <select id="imageSelect">  
+        <option value="https://i.pinimg.com/474x/e8/70/0f/e8700f8419eca1f1c82a2941c7d1d5ab.jpg">Gambar ke 1</option>  
+        <option value="https://i.pinimg.com/474x/d3/18/8c/d3188ceab471a886aa0dd7d8a0804913.jpg">Gambar ke 2</option>  
+        <option value="https://i.pinimg.com/474x/9f/ba/d6/9fbad6a7f182be1caea206e8e046fb1c.jpg">Gambar ke 3</option>  
+    </select>  
+
+    <label for="opacitySelect">Pilih Opacity:</label>  
+    <select id="opacitySelect">  
+        <option value="1">1</option>  
+        <option value="0.5">0.5</option>  
+        <option value="0.2">0.2</option>  
+    </select>  
+
+    <button onclick="updateImage()">Tampilkan Gambar</button>  
+
+    <div id="imageDisplay">  
+        <img  id="displayedImage" src="" alt="Gambar akan ditampilkan di sini" style="display:none;">  
+    </div>  
+
+    <script>  
+        function updateImage() {  
+            const imageSelect = document.getElementById('imageSelect').value;  
+            const opacitySelect = document.getElementById('opacitySelect').value;  
+            const displayedImage = document.getElementById('displayedImage');  
+
+            displayedImage.src = imageSelect;  
+            displayedImage.style.opacity = opacitySelect;  
+            displayedImage.style.display = 'block';  
+        }  
+    </script>  
+</body>  
+</html>

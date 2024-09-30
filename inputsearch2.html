@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LKPD6</title>
+    <link rel="stylesheet" href="06.css">
+</head>
+<body style="text-align: center;">
+
+    <div class="container">
+        <!-- <h2>Mencari data</h2> -->
+        <form id="searchForm" >  
+            <input  id="searchInput" type="text" placeholder="Search..." aria-label="Search">  
+            <button class="btn btn-outline-dark" type="submit">submit</button>  
+        </form>  
+
+        <div class="output" id="output"></div>
+    </div>
+
+
+
+    <script>
+        document.getElementById("searchForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            var inputText = document.getElementById("searchInput").value.trim(); 
+            if (inputText === "") {
+                document.getElementById("output").textContent = "Tidak mencari data...";
+            } else {
+                document.getElementById("output").textContent = "Mencari data  " + inputText + "...";
+            }
+        });
+    </script>
+
+</body>
+</html>
